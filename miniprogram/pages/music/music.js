@@ -27,56 +27,57 @@ Page({
         url:'http://p1.music.126.net/C9I9GxpvRX7nCZyXNBeqOw==/109951165664694558.jpg?imageView&quality=89'
       }
     ],
-    playlist:[
-      {
-      "id":"1001",
-      "playCount":"35000000000",
-      "name":"你可以永远Believe in Sodagreen",
-      "picUrl":"http://p4.music.126.net/g-dOmqfNwYLZhMIfN-pi8w==/3200678348535086.jpg?param=140y140"
-    },
+      playlist:[]
+    //playlist:[
+    //   {
+    //   "id":"1001",
+    //   "playCount":"35000000000",
+    //   "name":"你可以永远Believe in Sodagreen",
+    //   "picUrl":"http://p4.music.126.net/g-dOmqfNwYLZhMIfN-pi8w==/3200678348535086.jpg?param=140y140"
+    // },
 
-    {
-      "id":"1002",
-      "playCount":"180000000",
-      "name":"Light the Night",
-      "picUrl":"http://p4.music.126.net/WmfWKnTbZJasIn59BJMPLA==/109951165324021457.jpg?param=140y140"
-    },
+    // {
+    //   "id":"1002",
+    //   "playCount":"180000000",
+    //   "name":"Light the Night",
+    //   "picUrl":"http://p4.music.126.net/WmfWKnTbZJasIn59BJMPLA==/109951165324021457.jpg?param=140y140"
+    // },
 
-    {
-      "id":"1003",
-      "playCount":"24000",
-      "name":"孤寡孤寡孤寡",
-      "picUrl":"http://p4.music.126.net/4jKPv-lCyBbejFXb6-ypug==/109951165426754855.jpg?param=140y140"
-    },
+    // {
+    //   "id":"1003",
+    //   "playCount":"24000",
+    //   "name":"孤寡孤寡孤寡",
+    //   "picUrl":"http://p4.music.126.net/4jKPv-lCyBbejFXb6-ypug==/109951165426754855.jpg?param=140y140"
+    // },
 
-    {
-      "id":"1004",
-      "playCount":"1380543320",
-      "name":"Take me OuterSpace",
-      "picUrl":"http://p4.music.126.net/g7XhdPwotR4_jk1YIPc_tg==/109951165510465517.jpg?param=140y140"
-    },
+    // {
+    //   "id":"1004",
+    //   "playCount":"1380543320",
+    //   "name":"Take me OuterSpace",
+    //   "picUrl":"http://p4.music.126.net/g7XhdPwotR4_jk1YIPc_tg==/109951165510465517.jpg?param=140y140"
+    // },
 
-    {
-      "id":"1005",
-      "playCount":"200432234282",
-      "name":"于是你不停散落",
-      "picUrl":"http://p2.music.126.net/PJylNWy_2-jI7LRgQ2Cm6w==/109951165649129522.jpg?param=140y140"
-    },
+    // {
+    //   "id":"1005",
+    //   "playCount":"200432234282",
+    //   "name":"于是你不停散落",
+    //   "picUrl":"http://p2.music.126.net/PJylNWy_2-jI7LRgQ2Cm6w==/109951165649129522.jpg?param=140y140"
+    // },
 
-    {
-      "id":"1006",
-      "playCount":"1604326763",
-      "name":"今天也要加油鸭",
-      "picUrl":"http://p3.music.126.net/H1hHRAXzXQC0aKncahC-jw==/109951165420834103.jpg?param=140y140"
-    }
-  ]
+    // {
+    //   "id":"1006",
+    //   "playCount":"1604326763",
+    //   "name":"今天也要加油鸭",
+    //   "picUrl":"http://p3.music.126.net/H1hHRAXzXQC0aKncahC-jw==/109951165420834103.jpg?param=140y140"
+    // }
+  //]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this._getPlaylist()
   },
 
   /**
@@ -124,7 +125,20 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function () {},
 
-  }
+  _getPlaylist(){
+    wx.showLoading({
+      title: '加载中',
+    })
+    wx.cloud.callFunction({
+      name:'playlist'
+    }).then((res)=>{
+      console.log(res)
+      this.setData({
+        playlist:res.result
+      })
+      wx.hideLoading()
+    })
+  },
 })
