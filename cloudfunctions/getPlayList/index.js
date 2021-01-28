@@ -13,7 +13,7 @@ const playlistCollection = db.collection('playlist')
 //引入网络请求库axios，并定义一个常量方便调用
 const axios = require('axios')
 //定义接口地址，复制内网穿透后postman测试通过的接口地址
-const URL = 'https://dear1900.cn1.utools.club/top/playlist/highquality?before=1503639064232&limit=20'
+const URL = 'https://dear1900.cn1.utools.club/top/playlist/highquality?before=1503639064232&limit=50'
 
 
 // 云函数入口函数
