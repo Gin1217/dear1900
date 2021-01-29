@@ -28,6 +28,9 @@ Page({
       },
       {
         url:'http://p1.music.126.net/C9I9GxpvRX7nCZyXNBeqOw==/109951165664694558.jpg?imageView&quality=89'
+      },
+      {
+        url:'http://p1.music.126.net/qGmEr900RHhdTCTUxSXc_A==/109951165672845446.jpg?imageView&quality=89'
       }
     ],
       playlist:[]
