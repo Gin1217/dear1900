@@ -85,7 +85,7 @@
           "id": 3,
           "name": "player",
           "pathName": "pages/player/player",
-          "query": "playlistId= 553129929&index=0",
+          "query": "musicId= 381854&index=9",
           "scene": null
         }
       ]
