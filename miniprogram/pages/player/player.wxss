@@ -101,7 +101,16 @@
   font-size: 80rpx;
 }
 
-.icon-bofang, .icon-zanting{
+.icon-bofang,
+.icon-zanting{
   font-size: 120rpx;
   margin:0 50rpx;
+}
+
+.progress-bar{
+  width: 90%;
+  position: absolute;
+  left:50%;
+  transform: translate(-50%);
+  bottom: 24%;
 }
