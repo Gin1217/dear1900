@@ -83,7 +83,6 @@
   animation-play-state: paused;
 }
 
-
 .control{
   position: absolute;
   bottom: 8%;
@@ -97,7 +96,8 @@
   color:#fefefe
 }
 
-.icon-shangyishou-yuanshijituantubiao, .icon-xiayishou-yuanshijituantubiao{
+.icon-shangyishou-yuanshijituantubiao, 
+.icon-xiayishou-yuanshijituantubiao{
   font-size: 80rpx;
 }
 

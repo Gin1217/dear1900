@@ -1,5 +1,7 @@
 {
   "usingComponents": {
-    "gin-progress-bar":"/components/progress-bar/progress-bar"
-  }
+    "gin-progress-bar":"/components/progress-bar/progress-bar",
+    "gin-lyric":"/components/lyric/lyric"
+  },
+  "disableScroll":true
 }
